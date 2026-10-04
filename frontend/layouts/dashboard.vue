@@ -23,7 +23,7 @@ const signOut = async () => {
     <div class="workspace">
         <aside class="sidebar">
             <NuxtLink to="/" class="brand" aria-label="GiziLens home"
-                ><span class="brand-mark"><AppIcon name="leaf" :size="24" /></span>GiziLens<span
+                ><span class="brand-mark"><BrandMark /></span>GiziLens<span
                     class="brand-dot"
                     >.</span
                 ></NuxtLink
@@ -56,7 +56,7 @@ const signOut = async () => {
             <header class="workspace-header">
                 <div class="header-breadcrumb">
                     <NuxtLink to="/" class="mobile-brand" aria-label="GiziLens home"
-                        ><AppIcon name="leaf" :size="24" /></NuxtLink
+                        ><BrandMark :size="28" bare /></NuxtLink
                     ><span>Your workspace</span><AppIcon name="chevron" :size="14" /><strong>{{
                         activeTitle
                     }}</strong>

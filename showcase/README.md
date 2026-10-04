@@ -18,7 +18,7 @@ python showcase/build_showcase.py
 
 The cover uses the application's actual headline, "Eat well. Understand why.", and three concise capabilities: meals and nutrition, personal goals and hydration, and daily insights. It makes no AI, medical, or automation claims.
 
-The palette follows the application: teal `#187b67`, lime `#d6ef9b`, warm pale background, and dark green typography. The app's leaf symbol, outline icons, rounded surfaces, and calm spacing are reused. The desktop dashboard is the main visual; the mobile dashboard demonstrates the responsive experience.
+The palette follows the application: teal `#187b67`, lime `#d6ef9b`, warm pale background, and dark green typography. The custom G/lens/leaf logo, outline icons, rounded surfaces, and calm spacing follow the application. The outlined vector logo is sourced from `../brand/GiziLens-logo.svg`. The desktop dashboard is the main visual; the mobile dashboard demonstrates the responsive experience.
 
 The screen data and UI are captured directly from the running application. Screenshot viewport bounds are cropped inside the frames to remove browser capture margins, without recreating or replacing the UI. The mobile viewport override was reset after capture.
 

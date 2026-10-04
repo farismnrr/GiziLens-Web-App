@@ -37,7 +37,7 @@ const steps = [
         <div class="landing-shell">
             <header class="landing-header">
                 <NuxtLink to="/" class="brand" aria-label="GiziLens home"
-                    ><span class="brand-mark"><AppIcon name="leaf" :size="24" /></span>GiziLens<span
+                    ><span class="brand-mark"><BrandMark /></span>GiziLens<span
                         class="brand-dot"
                         >.</span
                     ></NuxtLink
@@ -157,7 +157,7 @@ const steps = [
             </main>
             <footer class="landing-footer">
                 <NuxtLink to="/" class="brand"
-                    ><span class="brand-mark"><AppIcon name="leaf" :size="20" /></span>GiziLens<span
+                    ><span class="brand-mark"><BrandMark /></span>GiziLens<span
                         class="brand-dot"
                         >.</span
                     ></NuxtLink

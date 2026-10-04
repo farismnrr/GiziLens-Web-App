@@ -13,6 +13,8 @@ def image(name):
 
 desktop = image("dashboard-desktop.jpg")
 mobile = image("dashboard-mobile.jpg")
+logo_svg = (ROOT.parent / "brand" / "GiziLens-logo.svg").read_text()
+logo_paths = logo_svg.split(">", 1)[1].rsplit("</svg>", 1)[0]
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
 <title>GiziLens — Eat well. Understand why.</title>
 <desc>A nutrition companion for tracking meals, hydration and personal goals. A single product cover with the actual desktop and mobile dashboards.</desc>
@@ -35,9 +37,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org
 <circle cx="1752" cy="83" r="195" fill="none" stroke="#64a58c" stroke-opacity=".3" stroke-width="1.5"/>
 <rect x="760" y="53" width="223" height="128" fill="url(#dots)" opacity=".7"/>
 <g font-family="Noto Sans, sans-serif" fill="#182c29">
-  <rect x="88" y="78" width="63" height="63" rx="20" fill="#187b67"/>
-  <use xlink:href="#leaf" transform="translate(101 91) scale(1.55)" color="white"/>
-  <text x="169" y="126" font-size="49" font-weight="700" letter-spacing="-2">GiziLens<tspan fill="#187b67">.</tspan></text>
+  <g transform="translate(88 72) scale(1.2)">{logo_paths}</g>
   <text x="90" y="241" font-size="20" font-weight="700" letter-spacing="3.1" fill="#187b67">YOUR NUTRITION COMPANION</text>
   <text x="84" y="366" font-size="103" font-weight="700" letter-spacing="-5.5">Eat well.</text>
   <text x="84" y="486" font-size="82" font-weight="700" letter-spacing="-4.7">Understand <tspan fill="#187b67">why.</tspan></text>

@@ -222,7 +222,7 @@ form > label {
     white-space: nowrap;
 }
 .brand-mark {
-    background: var(--teal);
+    background: transparent;
     color: white;
     display: inline-flex;
     align-items: center;
@@ -231,6 +231,35 @@ form > label {
     height: 37px;
     border-radius: 12px;
     margin-right: 10px;
+}
+.brand-symbol {
+    display: block;
+    flex-shrink: 0;
+    --brand-bg: var(--teal);
+    --brand-ring: #fff;
+    --brand-leaf: var(--lime);
+}
+.brand-mark .brand-symbol {
+    width: 100%;
+    height: 100%;
+}
+.brand-symbol-bg {
+    fill: var(--brand-bg);
+}
+.brand-symbol-ring {
+    stroke: var(--brand-ring);
+}
+.brand-symbol-leaf {
+    fill: var(--brand-leaf);
+}
+.brand.light .brand-symbol {
+    --brand-bg: var(--lime);
+    --brand-ring: var(--teal-dark);
+    --brand-leaf: var(--teal);
+}
+.mobile-brand .brand-symbol {
+    --brand-ring: var(--teal);
+    --brand-leaf: var(--teal);
 }
 .brand-dot {
     color: var(--teal);

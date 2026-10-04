@@ -2,7 +2,7 @@
     <div class="auth-layout">
         <aside class="auth-story">
             <NuxtLink to="/" class="brand light"
-                ><span class="brand-mark"><AppIcon name="leaf" :size="24" /></span>GiziLens<span
+                ><span class="brand-mark"><BrandMark /></span>GiziLens<span
                     class="brand-dot"
                     >.</span
                 ></NuxtLink
@@ -29,7 +29,7 @@
         </aside>
         <main class="auth-main" id="main-content">
             <NuxtLink to="/" class="brand auth-mobile-brand"
-                ><span class="brand-mark"><AppIcon name="leaf" :size="24" /></span>GiziLens<span
+                ><span class="brand-mark"><BrandMark /></span>GiziLens<span
                     class="brand-dot"
                     >.</span
                 ></NuxtLink

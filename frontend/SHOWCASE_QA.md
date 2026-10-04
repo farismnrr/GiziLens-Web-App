@@ -53,3 +53,7 @@ All 24 checks passed: document scroll width equals client width, no broken image
 The presentation opens with Nadia Putri, a 2,000 kcal goal, three meals totaling 1,040 kcal, and five glasses of water. The temporary dinner used for create/edit/delete testing has been removed. The frontend remains running through the existing normal `npm run dev -- --host 0.0.0.0 --port 3005` background process.
 
 This report describes a browser-local prototype. Authentication and food nutrition values remain local simulation/fixtures; that implementation detail is documented here and in the README, rather than exposed in product copy.
+
+## Brand update
+
+The G/lens/leaf mark was verified in the desktop dashboard, mobile dashboard, landing header/footer, and reverse auth branding. Landing and registration were checked at a 320 px CSS viewport with no horizontal overflow. The favicon/PWA asset is now square; primary, reverse and monochrome SVG lockups use outlined text and contain no raster images or font dependencies. The desktop/mobile screenshots in the cover were recaptured after the update. The exported cover remains 1920 × 1080, with a native 1:1 HTML preview. ESLint and staged diff checks passed.
