@@ -6,7 +6,7 @@ const logLevel = {
 };
 
 const log = (level: string, message: string) => {
-    if (process.env.NODE_ENV !== "production") {
+    if (import.meta.dev) {
         if (level === logLevel.INFO) {
             console.log(`[${level}] ${message}`);
         } else if (level === logLevel.DEBUG) {

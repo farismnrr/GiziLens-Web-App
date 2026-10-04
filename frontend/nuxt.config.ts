@@ -1,132 +1,45 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-// nuxt.config.ts
 import { defineNuxtConfig } from "nuxt/config";
-
-// Add manifestRouteRules to ExperimentalOptions
-interface ExtendedExperimentalOptions {
-    manifestRouteRules?: {
-        override?: boolean;
-    };
-}
-
-declare module "nuxt/schema" {
-    interface NitroConfig {
-        preset?: string;
-        routeRules?: Record<string, string | number | boolean | object>;
-        listen?: {
-            host?: string;
-            port?: number;
-        };
-    }
-
-    interface NuxtConfig {
-        server?: {
-            port?: number;
-            host?: string;
-        };
-        experimental?: ExtendedExperimentalOptions & Record<string, object>;
-        pwa?: string | boolean | object;
-    }
-}
 
 export default defineNuxtConfig({
     compatibilityDate: "2024-11-01",
-    devtools: { enabled: true },
+    devtools: { enabled: false },
     ssr: false,
-
+    css: ["~/assets/css/main.css"],
     app: {
         baseURL: "/",
         buildAssetsDir: "/assets/",
         head: {
-            meta: [{ name: "theme-color", content: "#4f46e5" }],
-            link: [{ rel: "icon", type: "image/png", href: "/logo.png" }]
+            meta: [{ name: "theme-color", content: "#187b67" }],
+            link: [{ rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]
         }
     },
-
-    runtimeConfig: {
-        apiKey: process.env.NUXT_API_KEY,
-        apiUrl: process.env.NUXT_API_URL,
-        public: {
-            apiBase: "/api",
-            baseUrl: process.env.BASE_URL || ""
-        }
-    },
-
-    server: {
-        port: process.env.NITRO_PORT ? parseInt(process.env.NITRO_PORT) : 3000,
-        host: process.env.NITRO_HOST || "0.0.0.0"
-    },
-
-    nitro: {
-        preset: "bun"
-    },
-
-    experimental: {
-        manifestRouteRules: {
-            override: true
-        }
-    },
-
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {}
-        }
-    },
-
-    modules: ["@nuxt/image", "@pinia/nuxt", "@vite-pwa/nuxt", "@nuxtjs/tailwindcss"],
-
+    nitro: { preset: "bun" },
+    postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
+    modules: ["@pinia/nuxt", "@vite-pwa/nuxt", "@nuxtjs/tailwindcss"],
     pwa: {
         registerType: "autoUpdate",
         injectRegister: "auto",
-        registerWebManifestInRouteRules: true,
         strategies: "generateSW",
-        includeAssets: ["favicon.ico", "logo.png"],
+        includeAssets: ["favicon.ico", "logo.svg", "avatar.svg"],
         manifest: {
-            name: "GiziLens - Food Nutrition Analysis Platform",
+            name: "GiziLens",
             short_name: "GiziLens",
-            theme_color: "#06b6d4",
+            theme_color: "#187b67",
             background_color: "#ffffff",
             display: "standalone",
             orientation: "portrait",
             scope: "/",
-            start_url: "/login",
-            icons: [
-                {
-                    src: "/favicon.ico",
-                    sizes: "64x64",
-                    type: "image/x-icon"
-                }
-            ],
-            description:
-                "A food nutrition analysis platform that helps you track and analyze your nutritional intake",
+            start_url: "/",
+            icons: [{ src: "/logo.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }],
+            description: "Your everyday nutrition companion.",
             categories: ["health", "nutrition", "food"]
         },
         workbox: {
-            navigateFallback: null,
+            navigateFallback: "/index.html",
             globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
-            cleanupOutdatedCaches: true,
-            runtimeCaching: [
-                {
-                    urlPattern: /^https:\/\/app\.farismunir\.my\.id\/*/,
-                    handler: "NetworkFirst",
-                    options: {
-                        cacheName: "api-cache",
-                        expiration: {
-                            maxEntries: 100,
-                            maxAgeSeconds: 60 * 60 * 24
-                        }
-                    }
-                }
-            ]
+            cleanupOutdatedCaches: true
         },
-        client: {
-            installPrompt: true
-        },
-        devOptions: {
-            enabled: true,
-            type: "module",
-            navigateFallbackAllowlist: [/^\/$/]
-        }
+        client: { installPrompt: true },
+        devOptions: { enabled: false }
     }
 });

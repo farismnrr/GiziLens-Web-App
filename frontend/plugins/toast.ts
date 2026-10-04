@@ -7,7 +7,7 @@ function showToast(
     message: string | undefined,
     type: "info" | "success" | "danger" | "warning" = "success"
 ) {
-    const safeMessage = message || "Server is temporarily unavailable. Please try again later.";
+    const safeMessage = message || "Please try again.";
 
     if (currentToast) {
         currentToast.removeToast();
@@ -41,7 +41,7 @@ function showToast(
         if (currentToast?.container === container) {
             removeToast();
         }
-    }, 2000);
+    }, 4500);
 }
 
 export default defineNuxtPlugin(() => {

@@ -1,22 +1,7 @@
-<script setup>
-const router = useRouter();
-
-useHead({
-    link: [{ rel: "manifest", href: "/manifest.json" }],
-    meta: [{ name: "theme-color", content: "#06b6d4" }]
-});
-
-onMounted(async () => {
-    if (router) {
-        router.beforeEach((to, from, next) => {
-            next();
-        });
-    }
-});
+<script setup lang="ts">
+useHead({ htmlAttrs: { lang: "en" }, meta: [{ name: "theme-color", content: "#187b67" }] });
 </script>
-
 <template>
-    <div>
-        <NuxtPage />
-    </div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <NuxtLayout><NuxtPage /></NuxtLayout>
 </template>
